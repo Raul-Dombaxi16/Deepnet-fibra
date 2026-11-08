@@ -756,8 +756,8 @@ button {
 .schedule li {
     display: flex;
     justify-content: space-between;
-    flex-wrap: wrap;
-    gap: 8px;
+    /* flex-wrap: wrap; */
+    gap: 13px;
     padding-bottom: 10px;
     border-bottom: 1px solid var(--border);
     font-size: 13px;
@@ -765,6 +765,7 @@ button {
 
 .schedule li span {
     color: var(--text-muted);
+    
 }
 
 .schedule li strong {
