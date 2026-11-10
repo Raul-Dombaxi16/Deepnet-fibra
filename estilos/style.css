@@ -468,260 +468,294 @@ button {
 }
 
 /* SECAO PLANOS */
-/* =========================
-   PLANOS DE INTERNET
-========================= */
+/* ==============================
+   SECÇÃO DE PLANOS - DEEPNET
+================================ */
 
-.planos {
-    padding: 100px 20px;
-    background: var(--bg-light);
+.planos-deepnet {
+    --deep-blue: #061a2f;
+    --deep-blue-light: #0b2b4a;
+    --deep-green: #63e645;
+    --deep-green-bright: #7cf052;
+    --deep-white: #ffffff;
+    --deep-muted: #c7d0d9;
+
+    position: relative;
+    overflow: hidden;
+    padding: 80px 20px;
+
+    background:
+        radial-gradient(
+            circle at 10% 80%,
+            rgba(99, 230, 69, 0.18),
+            transparent 30%
+        ),
+        radial-gradient(
+            circle at 90% 20%,
+            rgba(99, 230, 69, 0.12),
+            transparent 25%
+        ),
+        linear-gradient(
+            135deg,
+            #061a2f 0%,
+            #0a2742 50%,
+            #061a2f 100%
+        );
 }
 
-.planos .container {
-    max-width: 1200px;
+/* Efeitos de luz no fundo */
+
+.planos-luz {
+    position: absolute;
+    width: 400px;
+    height: 400px;
+    border-radius: 50%;
+    pointer-events: none;
+
+    background: radial-gradient(
+        circle,
+        rgba(99, 230, 69, 0.14),
+        transparent 65%
+    );
+
+    filter: blur(30px);
+}
+
+.luz-1 {
+    top: -200px;
+    right: -120px;
+}
+
+.luz-2 {
+    bottom: -250px;
+    left: -120px;
+}
+
+/* Container */
+
+.planos-deepnet .container {
+    position: relative;
+    z-index: 1;
+
+    max-width: 950px;
     margin: 0 auto;
 }
 
-/* Cabeçalho */
+/* ==============================
+   CABEÇALHO
+================================ */
 
-.planos-cabecalho {
-    max-width: 650px;
-    margin: 0 auto 60px;
+.planos-header {
+    margin-bottom: 45px;
     text-align: center;
 }
 
-.planos-etiqueta {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    padding: 8px 16px;
-    margin-bottom: 18px;
+.planos-tag {
+    display: inline-block;
+    margin-bottom: 14px;
 
-    color: var(--green);
-    background: rgba(22, 199, 132, 0.1);
-
-    border-radius: 50px;
-    font-size: 0.78rem;
+    color: var(--deep-green);
+    font-size: 0.75rem;
     font-weight: 700;
-    letter-spacing: 1px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
 }
 
-.planos-cabecalho h2 {
-    margin-bottom: 16px;
-    color: var(--text-dark);
-    font-size: clamp(2rem, 1.5vw, 2rem);
-    line-height: 1.2;
+.planos-header h2 {
+    margin-bottom: 12px;
+
+    color: var(--deep-white);
+    font-size: clamp(2.2rem, 5vw, 4rem);
+    font-weight: 800;
+    line-height: 1;
 }
 
-.planos-cabecalho p {
-    color: var(--text-muted);
-    font-size: 1rem;
-    line-height: 1.7;
+.planos-header h2 span {
+    color: var(--deep-green);
 }
 
-/* Grid */
+.planos-header p {
+    color: var(--deep-muted);
+    font-size: clamp(0.95rem, 2vw, 1.15rem);
+}
+
+/* ==============================
+   GRELHA DOS PLANOS
+================================ */
 
 .planos-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 25px;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
 }
 
-/* Card */
+/* ==============================
+   CARD
+================================ */
 
-.plano-card {
+.plano-deepnet {
     position: relative;
+    padding: 20px 24px;
 
-    padding: 32px;
-    background: var(--white);
+    border: 1px solid rgba(124, 240, 82, 0.65);
+    border-radius: 16px;
 
-    border: 1px solid rgba(16, 36, 59, 0.08);
-    border-radius: 18px;
+    background: linear-gradient(
+        135deg,
+        rgba(14, 49, 75, 0.9),
+        rgba(4, 22, 40, 0.9)
+    );
 
-    overflow: hidden;
+    box-shadow:
+        inset 0 1px 0 rgba(255, 255, 255, 0.06),
+        0 8px 22px rgba(0, 0, 0, 0.15);
 
-    transition: transform 0.3s ease,
-                box-shadow 0.3s ease,
-                border-color 0.3s ease;
+    transition:
+        transform 0.3s ease,
+        border-color 0.3s ease,
+        box-shadow 0.3s ease;
 }
 
-.plano-card:hover {
-    transform: translateY(-8px);
+.plano-deepnet:hover {
+    transform: translateY(-5px);
 
-    border-color: rgba(22, 199, 132, 0.4);
+    border-color: var(--deep-green-bright);
 
-    box-shadow: 0 18px 40px rgba(7, 24, 44, 0.12);
+    box-shadow:
+        0 12px 30px rgba(99, 230, 69, 0.12),
+        inset 0 1px 0 rgba(255, 255, 255, 0.08);
 }
 
-/* Topo do card */
+/* ==============================
+   NOME DO PLANO
+================================ */
 
-.plano-topo {
-    display: flex;
-    align-items: center;
-    gap: 14px;
-    margin-bottom: 30px;
+.plano-deepnet h3 {
+    margin-bottom: 15px;
+
+    color: var(--deep-green);
+    font-size: 0.9rem;
+    font-weight: 800;
+    letter-spacing: 4px;
 }
 
-.plano-icone {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+/* ==============================
+   VELOCIDADE E PREÇO
+================================ */
 
-    width: 48px;
-    height: 48px;
-
-    color: var(--green);
-    background: rgba(22, 199, 132, 0.1);
-
-    border-radius: 12px;
-}
-
-.plano-topo h3 {
-    color: var(--text-dark);
-    font-size: 1.35rem;
-}
-
-/* Velocidade */
-
-.plano-velocidade {
+.plano-info {
     display: flex;
     align-items: flex-end;
-    gap: 8px;
-
-    padding-bottom: 25px;
-    margin-bottom: 20px;
-
-    border-bottom: 1px solid rgba(16, 36, 59, 0.08);
+    justify-content: space-between;
+    gap: 15px;
 }
 
-.plano-velocidade strong {
-    color: var(--text-dark);
-    font-size: 4rem;
-    line-height: 0.9;
+.velocidade {
+    display: flex;
+    align-items: center;
 }
 
-.plano-velocidade span {
-    margin-bottom: 5px;
+.velocidade strong {
+    color: var(--deep-white);
+    font-size: clamp(3.5rem, 6vw, 5.5rem);
+    font-weight: 800;
+    line-height: 0.8;
+}
 
-    color: var(--green);
+.velocidade span {
+    margin-left: 8px;
+    margin-top: 20px;
+
+    color: var(--deep-white);
     font-size: 1rem;
     font-weight: 700;
 }
 
-/* Descrição */
+/* ==============================
+   PREÇO
+================================ */
 
-.plano-descricao {
-    min-height: 52px;
-    margin-bottom: 25px;
-
-    color: var(--text-muted);
-    line-height: 1.6;
-}
-
-/* Preço */
-
-.plano-preco {
-    display: flex;
-    flex-direction: column;
-}
-
-.plano-preco strong {
-    color: var(--bg-secondary);
-    font-size: 1.8rem;
-}
-
-.plano-preco span {
-    margin-top: 4px;
-    color: var(--text-muted);
-    font-size: 0.85rem;
-}
-
-/* Plano em destaque */
-
-.plano-destaque {
-    border: 2px solid var(--green);
-    box-shadow: 0 15px 35px rgba(22, 199, 132, 0.12);
-}
-
-.mais-popular {
-    position: absolute;
-    top: 18px;
-    right: 18px;
-
-    padding: 6px 10px;
-
-    background: var(--green);
-    color: var(--white);
+.preco {
+    margin-bottom: 3px;
+    padding: 9px 15px;
 
     border-radius: 50px;
 
-    font-size: 0.65rem;
-    font-weight: 700;
-    letter-spacing: 0.8px;
+    color: var(--deep-blue);
+    background: linear-gradient(
+        135deg,
+        var(--deep-green),
+        var(--deep-green-bright)
+    );
+
+    font-size: clamp(0.9rem, 1.5vw, 1.1rem);
+    font-weight: 800;
+    white-space: nowrap;
+
+    box-shadow: 0 4px 15px rgba(99, 230, 69, 0.18);
 }
 
-/* Aviso informativo */
+/* ==============================
+   PLANO TITÂNIO
+================================ */
 
-.planos-aviso {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 9px;
+.plano-premium {
+    border: 2px solid var(--deep-green);
 
-    margin-top: 40px;
-
-    color: var(--text-muted);
-    text-align: center;
-    font-size: 0.85rem;
+    background:
+        radial-gradient(
+            circle at 80% 20%,
+            rgba(99, 230, 69, 0.12),
+            transparent 40%
+        ),
+        linear-gradient(
+            135deg,
+            rgba(14, 49, 75, 0.95),
+            rgba(4, 22, 40, 0.95)
+        );
 }
 
-.planos-aviso i {
-    color: var(--green);
-}
-
-
-/* =========================
+/* ==============================
    RESPONSIVIDADE
-========================= */
+================================ */
 
-@media (max-width: 900px) {
+@media (max-width: 700px) {
 
-    .planos-grid {
-        grid-template-columns: repeat(2, 1fr);
+    .planos-deepnet {
+        padding: 65px 16px;
     }
 
-}
-
-@media (max-width: 600px) {
-
-    .planos {
-        padding: 75px 16px;
-    }
-
-    .planos-cabecalho {
-        margin-bottom: 40px;
+    .planos-header {
+        margin-bottom: 35px;
     }
 
     .planos-grid {
         grid-template-columns: 1fr;
-        gap: 18px;
+        gap: 14px;
     }
 
-    .plano-card {
-        padding: 28px;
+    .plano-deepnet {
+        padding: 20px;
     }
 
-    .plano-velocidade strong {
-        font-size: 3.5rem;
+    .plano-deepnet h3 {
+        font-size: 0.85rem;
+        letter-spacing: 3px;
     }
 
-    .planos-aviso {
-        align-items: flex-start;
-        line-height: 1.5;
+    .velocidade strong {
+        font-size: 4.5rem;
     }
-}
 
-/* Botão TV */
+    .velocidade span {
+        font-size: 0.9rem;
+    }
+
+    .preco {
+        padding: 9px 14px;
+        font-size: 0.9rem;
+    }
+}/* Botão TV */
 
 .television-content .button {
     margin-top: 25px;
