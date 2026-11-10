@@ -467,6 +467,260 @@ button {
     line-height: 1.8;
 }
 
+/* SECAO PLANOS */
+/* =========================
+   PLANOS DE INTERNET
+========================= */
+
+.planos {
+    padding: 100px 20px;
+    background: var(--bg-light);
+}
+
+.planos .container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Cabeçalho */
+
+.planos-cabecalho {
+    max-width: 650px;
+    margin: 0 auto 60px;
+    text-align: center;
+}
+
+.planos-etiqueta {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 16px;
+    margin-bottom: 18px;
+
+    color: var(--green);
+    background: rgba(22, 199, 132, 0.1);
+
+    border-radius: 50px;
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.planos-cabecalho h2 {
+    margin-bottom: 16px;
+    color: var(--text-dark);
+    font-size: clamp(2rem, 1.5vw, 2rem);
+    line-height: 1.2;
+}
+
+.planos-cabecalho p {
+    color: var(--text-muted);
+    font-size: 1rem;
+    line-height: 1.7;
+}
+
+/* Grid */
+
+.planos-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+/* Card */
+
+.plano-card {
+    position: relative;
+
+    padding: 32px;
+    background: var(--white);
+
+    border: 1px solid rgba(16, 36, 59, 0.08);
+    border-radius: 18px;
+
+    overflow: hidden;
+
+    transition: transform 0.3s ease,
+                box-shadow 0.3s ease,
+                border-color 0.3s ease;
+}
+
+.plano-card:hover {
+    transform: translateY(-8px);
+
+    border-color: rgba(22, 199, 132, 0.4);
+
+    box-shadow: 0 18px 40px rgba(7, 24, 44, 0.12);
+}
+
+/* Topo do card */
+
+.plano-topo {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 30px;
+}
+
+.plano-icone {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 48px;
+    height: 48px;
+
+    color: var(--green);
+    background: rgba(22, 199, 132, 0.1);
+
+    border-radius: 12px;
+}
+
+.plano-topo h3 {
+    color: var(--text-dark);
+    font-size: 1.35rem;
+}
+
+/* Velocidade */
+
+.plano-velocidade {
+    display: flex;
+    align-items: flex-end;
+    gap: 8px;
+
+    padding-bottom: 25px;
+    margin-bottom: 20px;
+
+    border-bottom: 1px solid rgba(16, 36, 59, 0.08);
+}
+
+.plano-velocidade strong {
+    color: var(--text-dark);
+    font-size: 4rem;
+    line-height: 0.9;
+}
+
+.plano-velocidade span {
+    margin-bottom: 5px;
+
+    color: var(--green);
+    font-size: 1rem;
+    font-weight: 700;
+}
+
+/* Descrição */
+
+.plano-descricao {
+    min-height: 52px;
+    margin-bottom: 25px;
+
+    color: var(--text-muted);
+    line-height: 1.6;
+}
+
+/* Preço */
+
+.plano-preco {
+    display: flex;
+    flex-direction: column;
+}
+
+.plano-preco strong {
+    color: var(--bg-secondary);
+    font-size: 1.8rem;
+}
+
+.plano-preco span {
+    margin-top: 4px;
+    color: var(--text-muted);
+    font-size: 0.85rem;
+}
+
+/* Plano em destaque */
+
+.plano-destaque {
+    border: 2px solid var(--green);
+    box-shadow: 0 15px 35px rgba(22, 199, 132, 0.12);
+}
+
+.mais-popular {
+    position: absolute;
+    top: 18px;
+    right: 18px;
+
+    padding: 6px 10px;
+
+    background: var(--green);
+    color: var(--white);
+
+    border-radius: 50px;
+
+    font-size: 0.65rem;
+    font-weight: 700;
+    letter-spacing: 0.8px;
+}
+
+/* Aviso informativo */
+
+.planos-aviso {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 9px;
+
+    margin-top: 40px;
+
+    color: var(--text-muted);
+    text-align: center;
+    font-size: 0.85rem;
+}
+
+.planos-aviso i {
+    color: var(--green);
+}
+
+
+/* =========================
+   RESPONSIVIDADE
+========================= */
+
+@media (max-width: 900px) {
+
+    .planos-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+}
+
+@media (max-width: 600px) {
+
+    .planos {
+        padding: 75px 16px;
+    }
+
+    .planos-cabecalho {
+        margin-bottom: 40px;
+    }
+
+    .planos-grid {
+        grid-template-columns: 1fr;
+        gap: 18px;
+    }
+
+    .plano-card {
+        padding: 28px;
+    }
+
+    .plano-velocidade strong {
+        font-size: 3.5rem;
+    }
+
+    .planos-aviso {
+        align-items: flex-start;
+        line-height: 1.5;
+    }
+}
+
 /* Botão TV */
 
 .television-content .button {
